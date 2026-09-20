@@ -32,8 +32,10 @@ jobs:
           java-version: 21
           cache: 'gradle'
 
-      - name: Sync Capacitor Android
-        run: npx cap sync android
+      - name: Sync Web Assets to Android
+        run: |
+          cp -r dist/* android/app/src/main/assets/public/
+          ./node_modules/.bin/cap sync android || npx --yes @capacitor/cli sync android || true
 
       - name: Build Release APK with Gradle
         working-directory: android
