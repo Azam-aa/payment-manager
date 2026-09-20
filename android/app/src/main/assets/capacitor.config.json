@@ -1,0 +1,11 @@
+{
+	"appId": "com.azam.paymentmanager",
+	"appName": "Payment Manager",
+	"webDir": "dist",
+	"plugins": {
+		"CapacitorSQLite": {
+			"iosDatabaseLocation": "Library/CapacitorDatabase",
+			"androidIsEncryption": false
+		}
+	}
+}
